@@ -1,0 +1,14 @@
+{
+    "capabilities": [
+      {
+        "browserName": "chrome",
+        "maxInstances": 1,
+        "se:nodeTags": ["nodeB"]
+      }
+    ],
+    "node": {
+      "port": 6666,
+      "register": true
+    }
+  }
+  

@@ -2,36 +2,39 @@ version: "3"
 services:
   selenium-hub:
     image: selenium/hub:4.21.0
+    platform: linux/amd64
     container_name: selenium-hub
     ports:
+      - "4442:4442"
+      - "4443:4443"
       - "4444:4444"
 
-  usera-node:
+  patient-node:
     image: selenium/node-chrome:4.21.0
+    platform: linux/amd64
+    container_name: patient-node
     shm_size: 2gb
     depends_on:
       - selenium-hub
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
     environment:
+      - TZ=Asia/Ho_Chi_Minh
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
-  userb-node:
+  provider-node:
     image: selenium/node-chrome:4.21.0
+    platform: linux/amd64
+    container_name: provider-node
     shm_size: 2gb
     depends_on:
       - selenium-hub
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
     environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-
-  runner-node:
-    image: selenium/node-chrome:4.21.0
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
+      - TZ=Asia/Ho_Chi_Minh
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443

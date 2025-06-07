@@ -1,0 +1,14 @@
+{
+    "capabilities": [
+      {
+        "browserName": "chrome",
+        "maxInstances": 1,
+        "se:nodeTags": ["provider"]
+      }
+    ],
+    "node": {
+      "port": 7777,
+      "register": true
+    }
+  }
+  

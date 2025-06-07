@@ -1,0 +1,14 @@
+{
+    "capabilities": [
+      {
+        "browserName": "chrome",
+        "maxInstances": 1,
+        "se:nodeTags": ["master"]
+      }
+    ],
+    "node": {
+      "port": 5555,
+      "register": true
+    }
+  }
+  

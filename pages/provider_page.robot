@@ -60,6 +60,7 @@ Open Provider Chat
 
 Send Provider Chat Message
     [Arguments]    ${message}
+    Wait Until Element Is Visible    ${CHAT_INPUT}
     Input Text    ${CHAT_INPUT}    ${message}
     Press Keys    ${CHAT_INPUT}    RETURN
 

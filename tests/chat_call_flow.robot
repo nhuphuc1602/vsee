@@ -20,7 +20,7 @@ Patient-Provider Chat and Call Flow (Local)
     Provider Leaves Meeting
     Patient Ends Visit
 
-User Chat Call Flow With Local Grid (Different Machine)
+Patient-Provider Chat and Call Flow With Local Grid (Different Machine)
     [Documentation]    Test using manually started local Selenium Grid:
     ...                Simulates two machines with distributed browser sessions.
     ...                Includes grid startup, call flow, chat verification, and teardown.    
@@ -40,7 +40,7 @@ User Chat Call Flow With Local Grid (Different Machine)
     ...           Teardown Selenium Grid    AND
     ...           Close All Browsers
 
-User Chat Call Flow With Docker Grid (Different Machine)
+Patient-Provider Chat and Call Flow With Docker Grid (Different Machine)
     [Documentation]    Test using Docker-based Selenium Grid:
     ...                Grid is started via Docker Compose.
     ...                Simulates distributed call/chat flow and performs clean grid shutdown.

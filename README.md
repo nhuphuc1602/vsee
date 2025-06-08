@@ -47,6 +47,12 @@ The repository is organized as follows:
    git clone <your-repo-url>
    cd vsee
    ```
+   
+  Or if you have a zip file of the source code, unzip it:
+   ```bash
+   unzip vsee-source.zip -d vsee
+   cd vsee
+   ```
 
 2. **Install Python dependencies**  
    ```bash
@@ -75,7 +81,7 @@ Simulates a call between userA (patient) and userB (provider) in two browser win
 
 **Run:**
 ```bash
-robot --test "User Chat Call Flow In Local" tests/chat_call_flow.robot
+robot --test "Patient-Provider Chat and Call Flow (Local)" tests/chat_call_flow.robot
 ```
 
 **What it does:**
@@ -95,16 +101,18 @@ You can run tests across multiple machines or containers using Selenium Grid. Th
 Start the Selenium Grid manually (e.g., with `run-grid.sh`), then run the test case for local grid:
 
 ```bash
-robot --test "User Chat Call Flow With Local Grid (Different Machine)" tests/chat_call_flow.robot
+robot --test "Patient-Provider Chat and Call Flow With Local Grid (Different Machine)" tests/chat_call_flow.robot
 ```
 
 #### B2. Docker Grid
 
-Start the Selenium Grid using Docker Compose, then run the test case for Docker grid:
+**Step 1:** Start Docker Desktop (or your Docker daemon) and ensure it is running before continuing.
+
+**Step 2:** Pull the Selenium Grid using Docker Compose, then run the test case for Docker grid:
 
 ```bash
 docker-compose -f docker-compose.yml pull
-robot --test "User Chat Call Flow With Docker Grid (Different Machine)" tests/chat_call_flow.robot
+robot --test "Patient-Provider Chat and Call Flow With Docker Grid (Different Machine)" tests/chat_call_flow.robot
 ```
 
 **Note:**  

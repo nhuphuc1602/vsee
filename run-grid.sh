@@ -16,5 +16,4 @@ nohup java -jar "$SELENIUM_JAR" node --config grid_config/patient.json --port 66
 echo "🟣 Starting Node C..."
 nohup java -jar "$SELENIUM_JAR" node --config grid_config/provider.json --port 7777 > nodeC.log 2>&1 &
 
-# Không exit script ngay, giữ nó chạy (ví dụ giữ sleep vô hạn)
 tail -f /dev/null

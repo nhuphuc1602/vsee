@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../pages/browser.robot
+Resource    ../pages/base.robot
 Resource    ../pages/patient_page.robot
 Resource    ../pages/provider_page.robot
 Resource    ../pages/video_call_page.robot

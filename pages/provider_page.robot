@@ -5,7 +5,7 @@ Resource   ../locator/provider_page.robot
 Resource   ../locator/patient_page.robot
 Resource   ../locator/video_call_page.robot
 Resource   ../pages/video_call_page.robot
-Resource   ../pages/browser.robot
+Resource   ../pages/base.robot
 
 *** Keywords ***
 Login As Provider

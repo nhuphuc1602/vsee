@@ -4,11 +4,15 @@ Resource    ../variables/env_variables.robot
 
 *** Test Cases ***
 Get GitHub Stats
-    ${issues}=    Get All Open Issues    ${GITHUB_ORG}
+    ${user_or_org}=    Set Variable    SeleniumHQ
+
+    ${token}=    Set Variable If    '${GITHUB_TOKEN}' != ''    ${GITHUB_TOKEN}    ${None}
+    
+    ${issues}=    Get All Open Issues    ${user_or_org}    ${token}
     Log    Total issues: ${issues}
 
-    ${repos}=    Get Sorted Repos By Update    ${GITHUB_ORG}
+    ${repos}=    Get Sorted Repos By Update    ${user_or_org}    ${token}
     Log    Most recently updated: ${repos[0]['name']}
 
-    ${top}=    Get Repo With Most Watchers    ${GITHUB_ORG}
+    ${top}=    Get Repo With Most Watchers    ${user_or_org}    ${token}
     Log    Most watched repo: ${top['name']} (${top['watchers_count']})

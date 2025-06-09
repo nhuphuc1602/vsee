@@ -16,8 +16,3 @@ Join To The Room
     Click Element    ${JOIN_NOW}
     Wait Until Element Is Not Visible    ${JOIN_NOW}    10
     Unselect Frame
-
-
-
-
-

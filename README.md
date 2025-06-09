@@ -25,7 +25,7 @@ The repository is organized as follows:
 │   ├── provider_page.robot
 │   └── video_call_page.robot
 ├── pages/                      # Page object files for Robot Framework
-│   ├── browser.robot
+│   ├── base.robot
 │   ├── patient_page.robot
 │   ├── provider_page.robot
 │   └── video_call_page.robot
@@ -69,7 +69,6 @@ The repository is organized as follows:
 Edit `variables/env_variables.robot` and set:
 - `${ROOM_URL}`: The meeting room URL
 - `${PROVIDER_USERNAME}` / `${PROVIDER_PASSWORD}`: Provider credentials
-- `${GITHUB_ORG}`: GitHub organization to analyze (e.g., `SeleniumHQ`)
 
 ---
 
@@ -143,8 +142,8 @@ robot tests/github_api_test.robot
 - Finds the repo with the most watchers.
 
 **Config:**  
-- Organization is set via `${GITHUB_ORG}` in `variables/env_variables.robot`.
 - No authentication needed for public orgs, but you can add a GitHub token for higher rate limits.
+- If you get API rate limit errors, create a token at https://github.com/settings/tokens and set it as `GITHUB_TOKEN` (env variable or in `variables/env_variables.robot`).
 
 ---
 

@@ -44,7 +44,7 @@ The repository is organized as follows:
 
 1. **Clone this repository**  
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/nhuphuc1602/vsee.git
    cd vsee
    ```
    

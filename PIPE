@@ -1,3 +1,3 @@
-provider-node:Up Less than a second
-patient-node:Up Less than a second
-selenium-hub:Up Less than a second
+  TCP    0.0.0.0:7777           0.0.0.0:0              LISTENING       3848
+  TCP    192.168.56.1:55910     192.168.56.1:7777      TIME_WAIT       0
+  TCP    [::]:7777              [::]:0                 LISTENING       3848

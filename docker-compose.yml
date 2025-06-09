@@ -18,14 +18,11 @@ services:
       - selenium-hub
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
-    # ports:
-    #   - "7901:7900"
     environment:
       - TZ=Asia/Ho_Chi_Minh
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      # - SE_VNC_NO_PASSWORD=1
 
   provider-node:
     image: selenium/node-chrome:4.21.0
@@ -36,12 +33,9 @@ services:
       - selenium-hub
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
-    # ports:
-    #   - "7900:7900"
     environment:
       - TZ=Asia/Ho_Chi_Minh
       - SE_EVENT_BUS_HOST=selenium-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      # - SE_VNC_NO_PASSWORD=1
 

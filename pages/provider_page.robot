@@ -51,26 +51,13 @@ Join Provider Meeting
     Select Frame    ${JITSI_FRAME}
     Wait Until Element Is Visible    ${JOIN_NOW}    10
     Click Element    ${JOIN_NOW}
-    Sleep    10
-    Log To Console    4.1
-    Capture Page Screenshot
 
 Open Provider Chat
-    Log To Console    5.1
-    Capture Page Screenshot
-    Sleep    20
-    Capture Page Screenshot
-    # Wait Until Element Is Visible    ${VISIT_CHAT_BTN}    10
-    # Run Keyword And Ignore Error    Wait Until Element Is Visible    ${VISIT_CHAT_BTN}
-    ${status}    ${message}=    Run Keyword And Ignore Error    Element Should Be Visible    ${VISIT_CHAT_BTN}
-    Run Keyword If    '${status}' == 'FAIL'    Log    Element not visible, refreshing browser...
-    Run Keyword If    '${status}' == 'FAIL'    Reload Page
-    Run Keyword If    '${status}' == 'FAIL'    Wait Until Element Is Visible    ${VISIT_CHAT_BTN}    20
-    Log To Console    5.2
-    Click Element    ${VISIT_CHAT_BTN}
-    Log To Console    5.3
+    Sleep    5
+    Wait Until Element Is Visible    ${OPEN_CHAT}    10
+    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${OPEN_CHAT}
+    Click Element    ${OPEN_CHAT}
     Unselect Frame
-    Log To Console    5.4
     Wait Until Element Is Visible    ${CHAT_MESSAGE_NOTICE}
 
 Send Provider Chat Message

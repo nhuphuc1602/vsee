@@ -14,7 +14,6 @@ Login As Patient
     Fill Patient Info And Join
 
 Fill Patient Info And Join
-    Log To Console    1.1
     Wait Until Element Is Visible    ${CLINIC_GUEST}
     Input Text    ${FIRST_NAME_INPUT}    phuc test
     Input Text    ${REASON_INPUT}    sick

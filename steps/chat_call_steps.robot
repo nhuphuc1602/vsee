@@ -4,7 +4,6 @@ Resource    ../pages/patient_page.robot
 Resource    ../pages/provider_page.robot
 Resource    ../pages/video_call_page.robot
 Resource    ../variables/env_variables.robot
-Library    Telnet
 
 *** Keywords ***
 Patient Logs In To Waiting Room
@@ -14,7 +13,7 @@ Patient Logs In To Waiting Room
 Patient Logs In To Waiting Room (Use Grid)
     [Documentation]    Patient logs in to the waiting room using Selenium Grid.
     [Arguments]         ${port}=4444
-    Login As Patient    ${ROOM_URL}    ${True}    ${port}    headlesschrome
+    Login As Patient    ${ROOM_URL}    ${True}    ${port}    chrome
 
 Provider Logs In To Dashboard
     [Documentation]    Provider logs in to the dashboard using the provided credentials.
@@ -23,7 +22,7 @@ Provider Logs In To Dashboard
 Provider Logs In To Dashboard (Use Grid)
     [Documentation]    Provider logs in to the dashboard using Selenium Grid and provided credentials.
     [Arguments]        ${port}=4444
-    Login As Provider (Use Grid)    ${ROOM_URL}    ${PROVIDER_USERNAME}    ${PROVIDER_PASSWORD}    ${port}    headlesschrome
+    Login As Provider (Use Grid)    ${ROOM_URL}    ${PROVIDER_USERNAME}    ${PROVIDER_PASSWORD}    ${port}    chrome
     
 Provider Starts Call
     [Documentation]    Provider initiates a video call to the patient.

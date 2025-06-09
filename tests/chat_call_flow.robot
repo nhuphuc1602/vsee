@@ -1,8 +1,6 @@
 *** Settings ***
 Resource    ../steps/chat_call_steps.robot
 
-Test Teardown    Close All Browsers
-
 *** Test Cases ***
 Patient-Provider Chat and Call Flow (Local)
     [Documentation]    End-to-end test on a single machine:
@@ -19,6 +17,7 @@ Patient-Provider Chat and Call Flow (Local)
     Patient Verifies Chat Message
     Provider Leaves Meeting
     Patient Ends Visit
+    [Teardown]    Close All Browsers
 
 Patient-Provider Chat and Call Flow With Local Grid (Different Machine)
     [Documentation]    Test using manually started local Selenium Grid:
@@ -37,23 +36,33 @@ Patient-Provider Chat and Call Flow With Local Grid (Different Machine)
     Provider Leaves Meeting
     Patient Ends Visit
     [Teardown]    Run Keywords
-    ...           Teardown Selenium Grid    AND
-    ...           Close All Browsers
+    ...           Close All Browsers    AND
+    ...           Teardown Selenium Grid
 
 Patient-Provider Chat and Call Flow With Docker Grid (Different Machine)
     [Documentation]    Test using Docker-based Selenium Grid:
     ...                Grid is started via Docker Compose.
     ...                Simulates distributed call/chat flow and performs clean grid shutdown.
+    [Timeout]  10 minutes
     [Setup]    Run Keywords
-    ...        Kill Ports For Selenium Grid    AND    
+    # ...        Kill Ports For Selenium Grid    AND    
     ...        Start Docker Compose And Wait
-    Patient Logs In To Waiting Room (Use Grid)
-    Provider Logs In To Dashboard (Use Grid)
+    Log To Console   1
+    Patient Logs In To Waiting Room (Use Grid)    4454
+    Log To Console   2
+    Provider Logs In To Dashboard (Use Grid)    4454
+    Log To Console   3
     Provider Starts Call
+    Log To Console   4
     Provider Joins Meeting
+    Log To Console   5
     Provider Opens Chat
+    Log To Console   6
     Provider Sends Chat Message
+    Log To Console   7
     Patient Verifies Chat Message
+    Log To Console   8
     Provider Leaves Meeting
+    Log To Console   9
     Patient Ends Visit
     [Teardown]    Stop Docker Compose

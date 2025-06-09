@@ -18,12 +18,12 @@ ${GRID_CONFIG_DIR}      grid_config
 *** Keywords ***
 Open Browser With Media Options
     [Documentation]    Open a Chrome browser with media stream options, optionally using Selenium Grid.
-    [Arguments]    ${url}    ${use_grid}=False    ${alias}=1
+    [Arguments]    ${url}    ${use_grid}=False    ${alias}=1    ${port}=4444    ${browser}=chrome
     ${caps}=    Evaluate    {"se:nodeTags": ["${alias}"], "browserName": "chrome"}    json
     Run Keyword If    '${use_grid}' == 'True'
-    ...    Open Browser    ${url}    chrome    options=add_argument("--use-device-ui-for-media-stream"); add_argument("----use-fake-ui-for-media-stream")    remote_url=http://localhost:4444    desired_capabilities=${caps}    alias=${alias}
+    ...    Open Browser    ${url}    ${browser}    options=add_argument("--use-device-ui-for-media-stream"); add_argument("--use-fake-ui-for-media-stream"); add_argument ("--disable-dev-shm-usage")     remote_url=http://localhost:${port}    desired_capabilities=${caps}    alias=${alias}
     ...    ELSE
-    ...    Open Browser    ${url}    chrome    options=add_argument("--use-device-ui-for-media-stream"); add_argument("----use-fake-ui-for-media-stream")    alias=${alias}
+    ...    Open Browser    ${url}    ${browser}    options=add_argument("--use-device-ui-for-media-stream"); add_argument("--use-fake-ui-for-media-stream")    alias=${alias}
     Maximize Browser Window
 
 Switch To Patient Browser
@@ -69,6 +69,7 @@ Stop Selenium Grid Local
     Terminate Process    selenium_grid
 
 Check Selenium Grid Health With While
+    [Arguments]    ${port}=4444
     ${max_attempts}=    Set Variable    5
     ${wait_seconds}=    Set Variable    2
     ${success}=         Set Variable    ${False}
@@ -76,7 +77,7 @@ Check Selenium Grid Health With While
 
     FOR    ${attempt}    IN RANGE    1    ${loop_limit}
         Log    Attempting to connect, try number ${attempt}...
-        ${status}    ${ignore}=    Run Keyword And Ignore Error    Selenium Grid Health Check
+        ${status}    ${ignore}=    Run Keyword And Ignore Error    Selenium Grid Health Check    ${port}
         Run Keyword If    '${status}' == 'PASS'    Set Test Variable    ${success}    ${True}
         Log    ${success}
         Run Keyword If    ${success}    Exit For Loop
@@ -88,7 +89,8 @@ Check Selenium Grid Health With While
     END
 
 Selenium Grid Health Check
-    Create Session    selenium    http://localhost:4444
+    [Arguments]    ${port}=4444
+    Create Session    selenium    http://localhost:${port}
     ${response}=    GET On Session    selenium    /ui/
     Log    Status code: ${response.status_code}
     Log    Response snippet: ${response.text[:200]}
@@ -116,7 +118,7 @@ Wait Until Docker Containers Are Running
         Sleep    3s
         Fail    Containers did not start after 30 seconds
     END
-    Check Selenium Grid Health With While
+    Check Selenium Grid Health With While    4454
 
 Stop Docker Compose
     [Arguments]    ${compose_file}=docker-compose.yml
@@ -128,7 +130,7 @@ Kill Port
     [Arguments]    ${PORT}
     ${OS}=    Evaluate    sys.platform    sys
     Run Keyword If    '${OS}' == 'linux' or '${OS}' == 'darwin'
-    ...    Run Process    bash    -c    lsof -ti:${PORT} | xargs kill -9
+    ...    Run Process    bash    -c    lsof -ti:${PORT} | grep -v "$(pgrep -f '.*Docker.*')" | xargs kill -9
     ...    ELSE IF    '${OS}' == 'win32'
     ...    Kill Port On Windows    ${PORT}
 

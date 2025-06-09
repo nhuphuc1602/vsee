@@ -9,11 +9,12 @@ Resource   ../pages/browser.robot
 
 *** Keywords ***
 Login As Patient
-    [Arguments]    ${url}    ${use_grid}=False
-    Open Browser With Media Options    ${url}    ${use_grid}    patient
+    [Arguments]    ${url}    ${use_grid}=False    ${port}=4444    ${browser}=chrome
+    Open Browser With Media Options    ${url}    ${use_grid}    patient    ${port}    ${browser}
     Fill Patient Info And Join
 
 Fill Patient Info And Join
+    Log To Console    1.1
     Wait Until Element Is Visible    ${CLINIC_GUEST}
     Input Text    ${FIRST_NAME_INPUT}    phuc test
     Input Text    ${REASON_INPUT}    sick

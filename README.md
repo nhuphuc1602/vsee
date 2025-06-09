@@ -48,7 +48,7 @@ The repository is organized as follows:
    cd vsee
    ```
    
-  Or if you have a zip file of the source code, unzip it:
+   Or if you have a zip file of the source code, unzip it:
    ```bash
    unzip vsee-source.zip -d vsee
    cd vsee
@@ -104,6 +104,10 @@ Start the Selenium Grid manually (e.g., with `run-grid.sh`), then run the test c
 robot --test "Patient-Provider Chat and Call Flow With Local Grid (Different Machine)" tests/chat_call_flow.robot
 ```
 
+**Note:**  
+- The latest Java version may not be supported by Selenium Grid. If you encounter any errors, please try downgrading to an earlier version.  
+- If you run docker Selenium Grid before, please run docker-compose down before running local grid.
+
 #### B2. Docker Grid
 
 **Step 1:** Start Docker Desktop (or your Docker daemon) and ensure it is running before continuing.
@@ -114,10 +118,11 @@ robot --test "Patient-Provider Chat and Call Flow With Local Grid (Different Mac
 docker-compose -f docker-compose.yml pull
 robot --test "Patient-Provider Chat and Call Flow With Docker Grid (Different Machine)" tests/chat_call_flow.robot
 ```
+The first run might take a while because Docker needs to pull the image. If your connection is too slow, it could cause errors. You can use the docker pull command I mentioned above if you run into any issues when running with Docker.
 
 **Note:**  
 - Ensure Docker is installed and running on your machine.  
-- If you have issues pulling images, adjust `platform: linux/amd64` in `docker-compose.yml` to match your system.  
+- If you have issues pulling images, adjust `platform: linux/amd64` in `docker-compose.yml` to match your system.
 - You can customize grid nodes in the `grid_config/` folder.  
 - For multi-machine setups, make sure all nodes can reach the hub and access the test files.
 

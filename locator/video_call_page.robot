@@ -17,3 +17,6 @@ ${VISIT_SURVEY}              id=VisitSurvey
 ${CLINIC_GUEST}              id=ClinicGuest
 ${JITSI_FRAME}               id=jitsiConferenceFrame0
 ${CALL_SCREEN}               id=controller-visits
+${ROOM_NAME_TITLE}           xpath=//span[@class='top-status--show-room-name']
+${TEXT_ME_POPUP}             xpath=//a[@data-bind='click: openPhone' and @class='button']
+${VISIT_CHAT_BTN}            xpath=//button[@id='group-chat']

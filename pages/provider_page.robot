@@ -16,15 +16,15 @@ Login As Provider
     Wait For Provider Home
 
 Login As Provider (Use Grid)
-    [Arguments]    ${url}    ${username}    ${password}
-    Open Provider Login Page    ${url}    ${True}
+    [Arguments]    ${url}    ${username}    ${password}    ${port}=4444    ${browser}=chrome
+    Open Provider Login Page    ${url}    ${True}    ${port}    ${browser}
     Input Provider Credentials    ${username}    ${password}
     Submit Provider Login
     Wait For Provider Home    
 
 Open Provider Login Page
-    [Arguments]    ${url}    ${use_grid}=False
-    Open Browser With Media Options    ${url}    ${use_grid}    provider
+    [Arguments]    ${url}    ${use_grid}=False    ${port}=4444    ${browser}=chrome
+    Open Browser With Media Options    ${url}    ${use_grid}    provider    ${port}    ${browser}
     Click Link    ${LOGIN_LINK}
 
 Input Provider Credentials
@@ -51,11 +51,26 @@ Join Provider Meeting
     Select Frame    ${JITSI_FRAME}
     Wait Until Element Is Visible    ${JOIN_NOW}    10
     Click Element    ${JOIN_NOW}
+    Sleep    10
+    Log To Console    4.1
+    Capture Page Screenshot
 
 Open Provider Chat
-    Wait Until Element Is Visible    ${OPEN_CHAT}    10
-    Click Element    ${OPEN_CHAT}
+    Log To Console    5.1
+    Capture Page Screenshot
+    Sleep    20
+    Capture Page Screenshot
+    # Wait Until Element Is Visible    ${VISIT_CHAT_BTN}    10
+    # Run Keyword And Ignore Error    Wait Until Element Is Visible    ${VISIT_CHAT_BTN}
+    ${status}    ${message}=    Run Keyword And Ignore Error    Element Should Be Visible    ${VISIT_CHAT_BTN}
+    Run Keyword If    '${status}' == 'FAIL'    Log    Element not visible, refreshing browser...
+    Run Keyword If    '${status}' == 'FAIL'    Reload Page
+    Run Keyword If    '${status}' == 'FAIL'    Wait Until Element Is Visible    ${VISIT_CHAT_BTN}    20
+    Log To Console    5.2
+    Click Element    ${VISIT_CHAT_BTN}
+    Log To Console    5.3
     Unselect Frame
+    Log To Console    5.4
     Wait Until Element Is Visible    ${CHAT_MESSAGE_NOTICE}
 
 Send Provider Chat Message

@@ -1,0 +1,24 @@
+14:17:05.804 INFO [LoggingOptions.configureLogEncoding] - Using the system default encoding
+14:17:05.807 INFO [OpenTelemetryTracer.createTracer] - Using OpenTelemetry for tracing
+14:17:05.848 INFO [UnboundZmqEventBus.<init>] - Connecting to tcp://0.0.0.0:4442 and tcp://0.0.0.0:4443
+14:17:05.863 INFO [UnboundZmqEventBus.<init>] - Sockets created
+14:17:06.869 INFO [UnboundZmqEventBus.<init>] - Event bus ready
+14:17:06.942 INFO [NodeServer.createHandlers] - Reporting self as: http://10.117.64.118:6666
+14:17:06.952 INFO [NodeOptions.getSessionFactories] - Detected 12 available processors
+14:17:06.953 INFO [NodeOptions.discoverDrivers] - Looking for existing drivers on the PATH.
+14:17:06.954 INFO [NodeOptions.discoverDrivers] - Add '--selenium-manager true' to the startup command to setup drivers automatically.
+14:17:07.463 WARN [SeleniumManager.lambda$runCommand$1] - Unable to discover proper msedgedriver version in offline mode
+14:17:08.021 WARN [SeleniumManager.lambda$runCommand$1] - Unable to download safaridriver in offline mode
+14:17:08.033 INFO [NodeOptions.report] - Adding Chrome for {"browserName": "chrome","platformName": "mac"} 12 times
+14:17:08.034 INFO [NodeOptions.report] - Adding Safari Technology Preview for {"browserName": "Safari Technology Preview","platformName": "mac"} 1 times
+14:17:08.034 INFO [NodeOptions.report] - Adding Safari for {"browserName": "safari","platformName": "mac"} 1 times
+14:17:08.035 INFO [NodeOptions.report] - Adding Firefox for {"browserName": "firefox","platformName": "mac"} 12 times
+14:17:08.035 INFO [NodeOptions.report] - Adding Edge for {"browserName": "MicrosoftEdge","platformName": "mac"} 12 times
+14:17:08.068 INFO [Node.<init>] - Binding additional locator mechanisms: relative
+14:17:08.139 INFO [NodeServer$2.start] - Starting registration process for Node http://10.117.64.118:6666
+14:17:08.140 INFO [NodeServer.execute] - Started Selenium node 4.33.0 (revision 2c6aaad03a): http://10.117.64.118:6666
+14:17:08.150 INFO [NodeServer$2.lambda$start$2] - Sending registration event...
+14:17:08.255 INFO [NodeServer.lambda$createHandlers$2] - Node has been added
+14:17:31.084 INFO [LocalNode.newSession] - Session created by the Node. Id: f24c44a8773c142d3acfde3d7bd3f5c6, Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: /var/folders/y7/j12wrr7x3ws...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60875}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:bidiEnabled: false, se:cdp: ws://10.117.64.118:4444/ses..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+14:18:08.161 INFO [LocalNode.stopTimedOutSession] - Session id f24c44a8773c142d3acfde3d7bd3f5c6 is stopping on demand...
+14:18:08.161 INFO [SessionSlot.stop] - Stopping session f24c44a8773c142d3acfde3d7bd3f5c6

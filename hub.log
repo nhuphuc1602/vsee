@@ -1,5 +1,28 @@
-21:39:55.061 INFO [LoggingOptions.configureLogEncoding] - Using the system default encoding
-21:39:55.065 INFO [OpenTelemetryTracer.createTracer] - Using OpenTelemetry for tracing
-21:39:55.196 INFO [BoundZmqEventBus.<init>] - XPUB binding to [binding to tcp://*:4442, advertising as tcp://192.168.56.1:4442], XSUB binding to [binding to tcp://*:4443, advertising as tcp://192.168.56.1:4443]
-21:39:55.232 INFO [UnboundZmqEventBus.<init>] - Connecting to tcp://192.168.56.1:4442 and tcp://192.168.56.1:4443
-21:39:55.253 INFO [UnboundZmqEventBus.<init>] - Sockets created
+14:17:00.817 INFO [LoggingOptions.configureLogEncoding] - Using the system default encoding
+14:17:00.821 INFO [OpenTelemetryTracer.createTracer] - Using OpenTelemetry for tracing
+14:17:01.298 INFO [BoundZmqEventBus.<init>] - XPUB binding to [binding to tcp://*:4442, advertising as tcp://10.117.64.118:4442], XSUB binding to [binding to tcp://*:4443, advertising as tcp://10.117.64.118:4443]
+14:17:01.321 INFO [UnboundZmqEventBus.<init>] - Connecting to tcp://10.117.64.118:4442 and tcp://10.117.64.118:4443
+14:17:01.328 INFO [UnboundZmqEventBus.<init>] - Sockets created
+14:17:02.334 INFO [UnboundZmqEventBus.<init>] - Event bus ready
+14:17:02.615 INFO [Hub.execute] - Started Selenium Hub 4.33.0 (revision 2c6aaad03a): http://localhost:4444
+14:17:03.446 INFO [Node.<init>] - Binding additional locator mechanisms: relative
+14:17:03.615 INFO [GridModel.setAvailability] - Switching Node f85efdd8-6092-4d9e-8210-d95a72fc7e3d (uri: http://10.117.64.118:5555) from DOWN to UP
+14:17:03.616 INFO [LocalDistributor.add] - Added node f85efdd8-6092-4d9e-8210-d95a72fc7e3d at http://10.117.64.118:5555. Health check every 120s
+14:17:08.159 INFO [Node.<init>] - Binding additional locator mechanisms: relative
+14:17:08.210 INFO [GridModel.setAvailability] - Switching Node 159f5715-7284-4d4f-959c-5260e63ff5fd (uri: http://10.117.64.118:7777) from DOWN to UP
+14:17:08.210 INFO [LocalDistributor.add] - Added node 159f5715-7284-4d4f-959c-5260e63ff5fd at http://10.117.64.118:7777. Health check every 120s
+14:17:08.211 INFO [Node.<init>] - Binding additional locator mechanisms: relative
+14:17:08.254 INFO [GridModel.setAvailability] - Switching Node 09b9bb32-7e61-4e88-af6c-9462d337ec3b (uri: http://10.117.64.118:6666) from DOWN to UP
+14:17:08.254 INFO [LocalDistributor.add] - Added node 09b9bb32-7e61-4e88-af6c-9462d337ec3b at http://10.117.64.118:6666. Health check every 120s
+14:17:10.700 INFO [LocalDistributor.newSession] - Session request received by the Distributor: 
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--use-device-ui-for-media-s..., --use-fake-ui-for-media-stream, --disable-dev-shm-usage], extensions: []}, pageLoadStrategy: normal}]
+14:17:11.642 INFO [LocalDistributor.newSession] - Session created by the Distributor. Id: 4a5470a3357b7916adf25953f9064bac 
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: /var/folders/y7/j12wrr7x3ws...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60818}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.117.64.118:4444/ses..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+14:17:30.078 INFO [LocalDistributor.newSession] - Session request received by the Distributor: 
+ [Capabilities {browserName: chrome, goog:chromeOptions: {args: [--use-device-ui-for-media-s..., --use-fake-ui-for-media-stream, --disable-dev-shm-usage], extensions: []}, pageLoadStrategy: normal}]
+14:17:31.096 INFO [LocalDistributor.newSession] - Session created by the Distributor. Id: f24c44a8773c142d3acfde3d7bd3f5c6 
+ Caps: Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: /var/folders/y7/j12wrr7x3ws...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60875}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: {}, se:bidiEnabled: false, se:cdp: ws://10.117.64.118:4444/ses..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+14:18:08.025 INFO [LocalSessionMap.remove] - Deleted session from local Session Map, Id: 4a5470a3357b7916adf25953f9064bac
+14:18:08.026 INFO [GridModel.release] - Releasing slot for session id 4a5470a3357b7916adf25953f9064bac
+14:18:08.162 INFO [LocalSessionMap.remove] - Deleted session from local Session Map, Id: f24c44a8773c142d3acfde3d7bd3f5c6
+14:18:08.162 INFO [GridModel.release] - Releasing slot for session id f24c44a8773c142d3acfde3d7bd3f5c6

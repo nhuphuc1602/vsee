@@ -39,8 +39,6 @@ Start Selenium Grid
     Start Process    java    -jar    ${SELENIUM_JAR}    hub    --host    localhost
     ...    stdout=hub.log    stderr=STDOUT    alias=hub
     Sleep    5s
-    Start Process    java    -jar    ${SELENIUM_JAR}    node    --config    ${GRID_CONFIG_DIR}/master.json    --port    5555
-    ...    stdout=master.log    stderr=STDOUT    alias=master
     Start Process    java    -jar    ${SELENIUM_JAR}    node    --config    ${GRID_CONFIG_DIR}/patient.json    --port    6666
     ...    stdout=patient.log    stderr=STDOUT    alias=patient
     Start Process    java    -jar    ${SELENIUM_JAR}    node    --config    ${GRID_CONFIG_DIR}/provider.json    --port    7777
@@ -50,14 +48,12 @@ Start Selenium Grid
 Teardown Selenium Grid
     [Documentation]    Terminate all Selenium Grid processes.
     Terminate Process    hub
-    Terminate Process    master
     Terminate Process    patient
     Terminate Process    provider
 
 Kill Ports For Selenium Grid
     [Documentation]    Kill all ports used by Selenium Grid.
     Kill Port    4444
-    Kill Port    5555
     Kill Port    6666
     Kill Port    7777
 

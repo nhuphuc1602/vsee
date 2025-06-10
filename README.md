@@ -109,6 +109,18 @@ robot --test "Patient-Provider Chat and Call Flow With Local Grid (Different Mac
 
 #### B2. Docker Grid
 
+**Important Compatibility Note**:
+- This setup is best supported and most stable on machines using amd64 architecture. If you're using a device with arm64 architecture (e.g., Mac with Apple Silicon M1/M2/M3 chips), you may encounter errors or unexpected behavior.
+
+- The official Selenium node-chrome image only supports linux/amd64, and compatibility with arm64 is limited or may break entirely.
+
+- Furthermore, VSee does not support video calls over browsers other than Chrome, so switching to Firefox or Chromium alternatives inside Docker containers is not a viable workaround.
+
+- On Mac (ARM64) specifically, Chrome inside Docker can hang or crash when joining a video call due to limitations in browser-media support and hardware acceleration.
+
+- Recommendation:
+To ensure reliability, it's strongly advised to run this Docker-based Selenium Grid setup on an amd64-based environment (e.g., Intel-based machines or cloud runners that support the correct architecture).
+
 **Step 1:** Start Docker Desktop (or your Docker daemon) and ensure it is running before continuing.
 
 **Step 2:** Pull the Selenium Grid using Docker Compose, then run the test case for Docker grid:

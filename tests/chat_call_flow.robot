@@ -54,4 +54,6 @@ Patient-Provider Chat and Call Flow With Docker Grid (Different Machine)
     Patient Verifies Chat Message
     Provider Leaves Meeting
     Patient Ends Visit
-    [Teardown]    Stop Docker Compose
+    [Teardown]     Run Keywords
+    ...            Close All Browsers    AND    
+    ...            Stop Docker Compose

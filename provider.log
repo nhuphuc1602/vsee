@@ -1,0 +1,21 @@
+14:17:05.806 INFO [LoggingOptions.configureLogEncoding] - Using the system default encoding
+14:17:05.809 INFO [OpenTelemetryTracer.createTracer] - Using OpenTelemetry for tracing
+14:17:05.849 INFO [UnboundZmqEventBus.<init>] - Connecting to tcp://0.0.0.0:4442 and tcp://0.0.0.0:4443
+14:17:05.864 INFO [UnboundZmqEventBus.<init>] - Sockets created
+14:17:06.866 INFO [UnboundZmqEventBus.<init>] - Event bus ready
+14:17:06.941 INFO [NodeServer.createHandlers] - Reporting self as: http://10.117.64.118:7777
+14:17:06.952 INFO [NodeOptions.getSessionFactories] - Detected 12 available processors
+14:17:06.953 INFO [NodeOptions.discoverDrivers] - Looking for existing drivers on the PATH.
+14:17:06.954 INFO [NodeOptions.discoverDrivers] - Add '--selenium-manager true' to the startup command to setup drivers automatically.
+14:17:07.463 WARN [SeleniumManager.lambda$runCommand$1] - Unable to discover proper msedgedriver version in offline mode
+14:17:08.020 WARN [SeleniumManager.lambda$runCommand$1] - Unable to download safaridriver in offline mode
+14:17:08.033 INFO [NodeOptions.report] - Adding Chrome for {"browserName": "chrome","platformName": "mac"} 12 times
+14:17:08.034 INFO [NodeOptions.report] - Adding Safari Technology Preview for {"browserName": "Safari Technology Preview","platformName": "mac"} 1 times
+14:17:08.035 INFO [NodeOptions.report] - Adding Safari for {"browserName": "safari","platformName": "mac"} 1 times
+14:17:08.035 INFO [NodeOptions.report] - Adding Firefox for {"browserName": "firefox","platformName": "mac"} 12 times
+14:17:08.035 INFO [NodeOptions.report] - Adding Edge for {"browserName": "MicrosoftEdge","platformName": "mac"} 12 times
+14:17:08.068 INFO [Node.<init>] - Binding additional locator mechanisms: relative
+14:17:08.138 INFO [NodeServer$2.start] - Starting registration process for Node http://10.117.64.118:7777
+14:17:08.138 INFO [NodeServer.execute] - Started Selenium node 4.33.0 (revision 2c6aaad03a): http://10.117.64.118:7777
+14:17:08.149 INFO [NodeServer$2.lambda$start$2] - Sending registration event...
+14:17:08.212 INFO [NodeServer.lambda$createHandlers$2] - Node has been added
